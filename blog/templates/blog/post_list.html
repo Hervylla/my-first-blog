@@ -3,20 +3,17 @@
         <title>Django Girls blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+        <<div>
+          <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 06.07.2018, 18:00</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Os rostos mais interessantes geralmente oscilam entre o charme e a deformidade. Há uma certa tirania da perfeição, até mesmo uma certa exaustão a seu respeito, algo que nega ao espectador um papel em sua criação e que se sustenta com todo o dogmatismo de uma afirmação não ambígua. A verdadeira beleza tem apenas alguns ângulos dos quais pode ser vista, e, mesmo assim, não sob todas as luzes e não em todos os momentos. Ela flerta perigosamente com a loucura, assume riscos consigo mesma, não se ajusta de modo confortável com regras matemáticas de proporção, tira seu apelo justo daquelas áreas que também servirão à feiura. Proust disse certa vez que as mulheres de beleza clássica deveriam ser deixadas para homens sem imaginação.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
 
-        <div>
-            <p>published: 06.07.2018, 18:32</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Ser suave é ter poder.</p>
-        </div>
     </body>
 </html>
